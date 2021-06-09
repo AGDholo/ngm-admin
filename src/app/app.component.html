@@ -1,0 +1,47 @@
+<div class="bg-yellow-600 p-5 shadow sticky top-0 right-0">
+  <a
+    *ngFor="let item of appbar"
+    class="
+      py-2
+      px-4
+      hover:bg-yellow-500
+      text-white
+      border-white
+      cursor-pointer
+      rounded-md
+      text-lg
+    "
+    >{{ item.text }}</a
+  >
+</div>
+
+<div class="pt-20 container mx-auto">
+  <div class="rounded-md border-2">
+    <div class="bg-yellow-600 p-4 text-white">交易所上新</div>
+
+    <div class="py-4">
+      <ul>
+        <li
+          *ngFor="let item of announcement"
+          class="hover:bg-gray-300 p-4 cursor-pointer flex"
+        >
+          <a
+            [ngClass]="{
+              'bg-gray-200': item.expire,
+              'bg-green-500 text-white': !item.expire
+            }"
+            class="rounded-xl py-2 px-4 cursor-pointer"
+            >{{ item.origin }} <span *ngIf="!item.expire">👆</span></a
+          >
+
+          <div class="ml-2">
+            {{ item.text }} <br />
+            <span class="text-xs">{{ item.time }}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
