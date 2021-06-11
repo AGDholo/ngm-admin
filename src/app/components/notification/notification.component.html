@@ -1,0 +1,51 @@
+<div class="bg-white mat-elevation-z1 shadow rounded-md">
+  <div
+    class="
+      mat-elevation-z1
+      shadow
+      p-4
+      text-md
+      font-bold
+      capitalize
+      tracking-wider
+      text-gray-500
+    "
+  >
+    Notifications
+  </div>
+  <mat-selection-list style="height: 500px">
+    <cdk-virtual-scroll-viewport
+      class="virtual-scroll-viewport"
+      itemSize="64"
+      maxBufferPx="800"
+      minBufferPx="400"
+    >
+      <mat-list-item
+        *cdkVirtualFor="let item of notifications"
+        class="
+          cursor-pointer
+          transition
+          ease-in-out
+          hover:bg-gray-100
+          virtual-scroll-item
+        "
+      >
+        <mat-icon class="bg-blue-400 text-white" matListIcon>
+          notifications
+        </mat-icon>
+        <div matLine>
+          {{ item.title }}
+        </div>
+        <div class="text-sm mat-caption text-gray-500" matLine>
+          {{ item.desc }}
+        </div>
+
+        <div class="mat-caption text-gray-500">{{ item.time }}</div>
+      </mat-list-item>
+    </cdk-virtual-scroll-viewport>
+  </mat-selection-list>
+</div>
+
+<cdk-virtual-scroll-viewport class="example-viewport" itemSize="50">
+  <div *cdkVirtualFor="let item of notifications" class="example-item">123</div>
+</cdk-virtual-scroll-viewport>

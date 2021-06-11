@@ -1,0 +1,33 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 256px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.nav-list-active {
+  &:before {
+    content: '';
+    opacity: .12;
+    background-color: rgb(59, 130, 246);
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .3s cubic-bezier(.25, .8, .5, 1);
+    border-radius: 4px;
+  }
+}

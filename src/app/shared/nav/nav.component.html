@@ -1,0 +1,45 @@
+<mat-sidenav-container class="sidenav-container bg-gray-200">
+  <mat-sidenav
+    #drawer
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+    class="sidenav shadow-lg mat-elevation-z2 px-2"
+    fixedInViewport
+  >
+    <mat-toolbar>Ngm-admin</mat-toolbar>
+    <mat-nav-list *ngFor="let item of appRouter.config">
+      <div class="p-4 uppercase tracking-widest text-gray-400 font-bold">
+        {{ item.data?.subtitle }}
+      </div>
+      <mat-list-item
+        *ngFor="let children of item.children"
+        [routerLink]="item?.path + '/' + (children?.path ?? '')"
+        routerLinkActive="nav-list-active"
+      >
+        <mat-icon class="text-blue-500" matlisticon>{{
+          children.data?.icon
+        }}</mat-icon>
+        <div class="text-blue-500">{{ children.data?.name }}</div>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="mat-elevation-z2 shadow-lg bg-white">
+      <button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        type="button"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Ngm-admin</span>
+    </mat-toolbar>
+
+    <div class="container mx-auto pt-10">
+      <ng-content></ng-content>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
