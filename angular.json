@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "epicdata-web": {
+    "ngm-admin": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/epicdata-web",
+            "outputPath": "dist/ngm-admin",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "epicdata-web:build:production"
+              "browserTarget": "ngm-admin:build:production"
             },
             "development": {
-              "browserTarget": "epicdata-web:build:development"
+              "browserTarget": "ngm-admin:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "epicdata-web:build"
+            "browserTarget": "ngm-admin:build"
           }
         },
         "test": {
@@ -118,7 +118,7 @@
       }
     }
   },
-  "defaultProject": "epicdata-web",
+  "defaultProject": "ngm-admin",
   "cli": {
     "defaultCollection": "@angular-eslint/schematics"
   }
