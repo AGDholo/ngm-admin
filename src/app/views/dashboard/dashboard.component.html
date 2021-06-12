@@ -1,0 +1,17 @@
+<mat-grid-list cols="4">
+  <mat-grid-tile *ngFor="let item of components">
+    <mat-card
+      [routerLink]="item.to"
+      class="mat-elevation-z1 shadow cursor-pointer"
+    >
+      <mat-card-header>
+        <mat-card-title>
+          {{ item.name }}
+        </mat-card-title>
+        <mat-card-subtitle>
+          Use the virtual scrolling feature for high performance purposes.
+        </mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
