@@ -21,6 +21,7 @@ import { EmptyComponent } from './layout/empty/empty.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { NotificationsComponent } from './views/components/notifications/notifications.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     EmptyComponent,
     NotificationComponent,
     NotificationsComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

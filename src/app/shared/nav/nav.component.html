@@ -13,14 +13,35 @@
         {{ item.data?.subtitle }}
       </div>
       <mat-list-item
+        *ngIf="item.data?.name"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [routerLink]="item.path"
+        routerLinkActive="nav-list-active"
+      >
+        <mat-icon
+          [routerLinkActiveOptions]="{ exact: true }"
+          matListIcon
+          routerLinkActive="text-blue-500"
+        >
+          {{ item.data?.icon }}
+        </mat-icon>
+        <div
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="text-blue-500"
+        >
+          {{ item.data?.name }}
+        </div>
+      </mat-list-item>
+
+      <mat-list-item
         *ngFor="let children of item.children"
         [routerLink]="item?.path + '/' + (children?.path ?? '')"
         routerLinkActive="nav-list-active"
       >
-        <mat-icon class="text-blue-500" matlisticon>{{
+        <mat-icon matlisticon routerLinkActive="text-blue-500">{{
           children.data?.icon
         }}</mat-icon>
-        <div class="text-blue-500">{{ children.data?.name }}</div>
+        <div routerLinkActive="text-blue-500">{{ children.data?.name }}</div>
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
