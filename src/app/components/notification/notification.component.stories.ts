@@ -4,7 +4,7 @@ import { moduleMetadata, Story } from '@storybook/angular';
 import { AppModule } from '../../app.module';
 
 export default {
-  title: 'Notification',
+  title: 'Ngm/Components/Notification',
   component: NotificationComponent,
   decorators: [
     moduleMetadata({
@@ -22,3 +22,4 @@ Notification.args = {
   bordered: false,
   flat: false,
 };
+Notification.parameters = {};
