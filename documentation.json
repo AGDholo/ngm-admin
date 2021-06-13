@@ -979,7 +979,7 @@
                                     "icon": "notifications_none"
                                 },
                                 "path": "notification",
-                                "component": "DashboardComponent"
+                                "component": "NotificationViewComponent"
                             }
                         ]
                     }

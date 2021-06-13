@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 const notification = [
   {
@@ -15,6 +15,12 @@ const notification = [
   styleUrls: ['./notification.component.scss'],
 })
 export class NotificationComponent {
+  @Input()
+  flat: Boolean = false;
+
+  @Input()
+  bordered: Boolean = false;
+
   constructor() {}
 
   public get notifications() {

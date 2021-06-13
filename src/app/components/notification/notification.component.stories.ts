@@ -17,4 +17,8 @@ const Template: Story<NotificationComponent> = (args) => ({
   props: args,
 });
 
-export const NotificationStory = Template.bind({});
+export const Notification = Template.bind({});
+Notification.args = {
+  bordered: false,
+  flat: false,
+};

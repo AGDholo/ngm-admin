@@ -1,7 +1,12 @@
-<div class="bg-white mat-elevation-z1 shadow rounded-md">
+<div
+  [ngClass]="{
+    'shadow-none': flat,
+    border: bordered
+  }"
+  class="bg-white rounded-md shadow"
+>
   <div
     class="
-      mat-elevation-z1
       shadow
       p-4
       text-md
@@ -9,6 +14,7 @@
       capitalize
       tracking-wider
       text-gray-500
+      mat-elevation-z1
     "
   >
     Notifications
