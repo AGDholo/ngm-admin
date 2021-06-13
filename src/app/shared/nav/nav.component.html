@@ -8,42 +8,65 @@
     fixedInViewport
   >
     <mat-toolbar>Ngm-admin</mat-toolbar>
-    <mat-nav-list *ngFor="let item of appRouter.config">
-      <div class="p-4 uppercase tracking-widest text-gray-400 font-bold">
-        {{ item.data?.subtitle }}
-      </div>
-      <mat-list-item
-        *ngIf="item.data?.name"
-        [routerLinkActiveOptions]="{ exact: true }"
-        [routerLink]="item.path"
-        routerLinkActive="nav-list-active"
-      >
-        <mat-icon
-          [routerLinkActiveOptions]="{ exact: true }"
-          matListIcon
-          routerLinkActive="text-blue-500"
-        >
-          {{ item.data?.icon }}
-        </mat-icon>
-        <div
-          [routerLinkActiveOptions]="{ exact: true }"
-          routerLinkActive="text-blue-500"
-        >
-          {{ item.data?.name }}
-        </div>
-      </mat-list-item>
 
-      <mat-list-item
-        *ngFor="let children of item.children"
-        [routerLink]="item?.path + '/' + (children?.path ?? '')"
-        routerLinkActive="nav-list-active"
-      >
-        <mat-icon matlisticon routerLinkActive="text-blue-500">{{
-          children.data?.icon
-        }}</mat-icon>
-        <div routerLinkActive="text-blue-500">{{ children.data?.name }}</div>
-      </mat-list-item>
-    </mat-nav-list>
+    <div
+      class="flex flex-col justify-between"
+      style="height: calc(100vh - 64px)"
+    >
+      <div>
+        <mat-nav-list *ngFor="let item of appRouter.config">
+          <div class="p-4 uppercase tracking-widest text-gray-400 font-bold">
+            {{ item.data?.subtitle }}
+          </div>
+          <mat-list-item
+            *ngIf="item.data?.name"
+            [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="item.path"
+            routerLinkActive="nav-list-active"
+          >
+            <mat-icon
+              [routerLinkActiveOptions]="{ exact: true }"
+              matListIcon
+              routerLinkActive="text-blue-500"
+            >
+              {{ item.data?.icon }}
+            </mat-icon>
+            <div
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLinkActive="text-blue-500"
+            >
+              {{ item.data?.name }}
+            </div>
+          </mat-list-item>
+
+          <mat-list-item
+            *ngFor="let children of item.children"
+            [routerLink]="item?.path + '/' + (children?.path ?? '')"
+            routerLinkActive="nav-list-active"
+          >
+            <mat-icon matlisticon routerLinkActive="text-blue-500">{{
+              children.data?.icon
+              }}</mat-icon>
+            <div routerLinkActive="text-blue-500">
+              {{ children.data?.name }}
+            </div>
+          </mat-list-item>
+        </mat-nav-list>
+      </div>
+
+      <div class="mx-auto mb-4">
+        <a
+          class="block flex align-middle"
+          color="primary"
+          href="https://github.com/AGDholo/ngm-admin"
+          mat-raised-button
+          target="_blank"
+        >
+          <mat-icon class="mr-2">cloud_download</mat-icon>
+          Free Download
+        </a>
+      </div>
+    </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar class="mat-elevation-z2 shadow-lg bg-white">
