@@ -27,13 +27,13 @@
             <mat-icon
               [routerLinkActiveOptions]="{ exact: true }"
               matListIcon
-              routerLinkActive="text-blue-500"
+              routerLinkActive="text-purple-700"
             >
               {{ item.data?.icon }}
             </mat-icon>
             <div
               [routerLinkActiveOptions]="{ exact: true }"
-              routerLinkActive="text-blue-500"
+              routerLinkActive="text-purple-700"
             >
               {{ item.data?.name }}
             </div>
@@ -44,10 +44,10 @@
             [routerLink]="item?.path + '/' + (children?.path ?? '')"
             routerLinkActive="nav-list-active"
           >
-            <mat-icon matlisticon routerLinkActive="text-blue-500">{{
+            <mat-icon matlisticon routerLinkActive="text-purple-700">{{
               children.data?.icon
             }}</mat-icon>
-            <div routerLinkActive="text-blue-500">
+            <div routerLinkActive="text-purple-700">
               {{ children.data?.name }}
             </div>
           </mat-list-item>
