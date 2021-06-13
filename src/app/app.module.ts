@@ -22,6 +22,7 @@ import { NotificationComponent } from './components/notification/notification.co
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { APP_BASE_HREF } from '@angular/common';
+import { NotificationViewComponent } from './views/components/notification-view/notification-view.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { APP_BASE_HREF } from '@angular/common';
     EmptyComponent,
     NotificationComponent,
     DashboardComponent,
+    NotificationViewComponent,
   ],
   imports: [
     BrowserModule,

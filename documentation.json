@@ -437,6 +437,50 @@
             "templateData": "<div class=\"bg-white mat-elevation-z1 shadow rounded-md\">\n  <div\n    class=\"\n      mat-elevation-z1\n      shadow\n      p-4\n      text-md\n      font-bold\n      capitalize\n      tracking-wider\n      text-gray-500\n    \"\n  >\n    Notifications\n  </div>\n  <mat-selection-list style=\"height: 500px\">\n    <cdk-virtual-scroll-viewport\n      class=\"virtual-scroll-viewport\"\n      itemSize=\"64\"\n      maxBufferPx=\"800\"\n      minBufferPx=\"400\"\n    >\n      <mat-list-item\n        *cdkVirtualFor=\"let item of notifications\"\n        class=\"\n          cursor-pointer\n          transition\n          ease-in-out\n          hover:bg-gray-100\n          virtual-scroll-item\n        \"\n      >\n        <mat-icon class=\"bg-blue-400 text-white\" matListIcon>\n          notifications\n        </mat-icon>\n        <div matLine>\n          {{ item.title }}\n        </div>\n        <div class=\"text-sm mat-caption text-gray-500\" matLine>\n          {{ item.desc }}\n        </div>\n\n        <div class=\"mat-caption text-gray-500\">{{ item.time }}</div>\n      </mat-list-item>\n    </cdk-virtual-scroll-viewport>\n  </mat-selection-list>\n</div>\n\n<cdk-virtual-scroll-viewport class=\"example-viewport\" itemSize=\"50\">\n  <div *cdkVirtualFor=\"let item of notifications\" class=\"example-item\">123</div>\n</cdk-virtual-scroll-viewport>\n"
         },
         {
+            "name": "NotificationViewComponent",
+            "id": "component-NotificationViewComponent-54cf825cd809e1f439da290e15eaf161",
+            "file": "src/app/views/components/notification-view/notification-view.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-notification-view",
+            "styleUrls": [
+                "./notification-view.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./notification-view.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-notification-view',\n  templateUrl: './notification-view.component.html',\n  styleUrls: ['./notification-view.component.scss'],\n})\nexport class NotificationViewComponent {\n  constructor() {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./notification-view.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "templateData": "<app-notification></app-notification>\n"
+        },
+        {
             "name": "PageComponent",
             "id": "component-PageComponent-8f196770333aa216860a88c0b6b221aa",
             "file": "src/stories/page.component.ts",
@@ -524,6 +568,9 @@
                         },
                         {
                             "name": "NotificationComponent"
+                        },
+                        {
+                            "name": "NotificationViewComponent"
                         }
                     ]
                 },
@@ -1009,6 +1056,15 @@
                 "name": "NavComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/views/components/notification-view/notification-view.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NotificationViewComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
