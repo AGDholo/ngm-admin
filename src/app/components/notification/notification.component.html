@@ -27,7 +27,7 @@
       minBufferPx="400"
     >
       <mat-list-item
-        *cdkVirtualFor="let item of notifications"
+        *cdkVirtualFor="let item of notifications; let i = index"
         class="
           cursor-pointer
           transition
@@ -47,6 +47,8 @@
         </div>
 
         <div class="mat-caption text-gray-500">{{ item.time }}</div>
+
+        <mat-divider *ngIf="notifications.length !== i + 1"></mat-divider>
       </mat-list-item>
     </cdk-virtual-scroll-viewport>
   </mat-selection-list>
