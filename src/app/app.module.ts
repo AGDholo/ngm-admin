@@ -19,9 +19,9 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { NavComponent } from './shared/nav/nav.component';
 import { EmptyComponent } from './layout/empty/empty.component';
 import { NotificationComponent } from './components/notification/notification.component';
-import { NotificationsComponent } from './views/components/notifications/notifications.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,6 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
     NavComponent,
     EmptyComponent,
     NotificationComponent,
-    NotificationsComponent,
     DashboardComponent,
   ],
   imports: [
@@ -51,7 +50,8 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
     MatIconModule,
     ScrollingModule,
   ],
-  providers: [],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent],
+  exports: [NotificationComponent],
 })
 export class AppModule {}
