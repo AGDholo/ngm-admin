@@ -1,7 +1,49 @@
 {
     "pipes": [],
     "interfaces": [],
-    "injectables": [],
+    "injectables": [
+        {
+            "name": "InMemoryDataService",
+            "id": "injectable-InMemoryDataService-e7177d8dcb088295000ac0b771a35f7e",
+            "file": "src/app/in-memory-data.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "createDb",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{ heroes: {}; }",
+                    "typeParameters": [],
+                    "line": 8
+                },
+                {
+                    "name": "genId",
+                    "args": [
+                        {
+                            "name": "heroes",
+                            "type": "any"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 29,
+                    "jsdoctags": [
+                        {
+                            "name": "heroes",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "description": "",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { InMemoryDbService } from 'angular-in-memory-web-api';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class InMemoryDataService implements InMemoryDbService {\n  createDb() {\n    const heroes = [\n      { id: 11, name: 'Dr Nice' },\n      { id: 12, name: 'Narco' },\n      { id: 13, name: 'Bombasto' },\n      { id: 14, name: 'Celeritas' },\n      { id: 15, name: 'Magneta' },\n      { id: 16, name: 'RubberMan' },\n      { id: 17, name: 'Dynama' },\n      { id: 18, name: 'Dr IQ' },\n      { id: 19, name: 'Magma' },\n      { id: 20, name: 'Tornado' },\n    ];\n    return { heroes };\n  }\n\n  // Overrides the genId method to ensure that a hero always has an id.\n  // If the heroes array is empty,\n  // the method below returns the initial number (11).\n  // if the heroes array is not empty, the method below returns the highest\n  // hero id + 1.\n  genId(heroes: any): any {\n    return heroes;\n  }\n}\n",
+            "type": "injectable"
+        }
+    ],
     "classes": [],
     "directives": [],
     "components": [
@@ -36,7 +78,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": "\r\n",
                     "styleUrl": "./app.component.scss"
                 }
             ],
@@ -240,7 +282,7 @@
         },
         {
             "name": "NotificationComponent",
-            "id": "component-NotificationComponent-fb81bd6c1410e107a2504a844b5f43c3",
+            "id": "component-NotificationComponent-59e02cfe90b70d9fb32575bf61b77c8b",
             "file": "src/app/components/notification/notification.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -260,7 +302,7 @@
                 {
                     "name": "bordered",
                     "defaultValue": "false",
-                    "line": 22,
+                    "line": 21,
                     "type": "Boolean"
                 },
                 {
@@ -278,7 +320,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\nconst notification = [\n  {\n    title: 'Lorem ipsum dolor',\n    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, repudiandae?',\n    time: '4 min',\n    outdated: false,\n  },\n];\n\n@Component({\n  selector: 'app-notification',\n  templateUrl: './notification.component.html',\n  styleUrls: ['./notification.component.scss'],\n})\nexport class NotificationComponent {\n  @Input()\n  flat: Boolean = false;\n\n  @Input()\n  bordered: Boolean = false;\n\n  constructor() {}\n\n  public get notifications() {\n    return [...new Array(100)].reduce((items) => {\n      items.push(...notification);\n      return items;\n    }, []);\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\nconst notification = [\n  {\n    title: 'Lorem ipsum dolor',\n    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, repudiandae?',\n    time: '4 min',\n    outdated: false,\n  },\n];\n\n@Component({\n  selector: 'app-notification',\n  templateUrl: './notification.component.html',\n  styleUrls: ['./notification.component.scss'],\n})\nexport class NotificationComponent {\n  @Input()\n  flat: Boolean = false;\n  @Input()\n  bordered: Boolean = false;\n\n  constructor() {}\n\n  public get notifications() {\n    return [...new Array(100)].reduce((items) => {\n      items.push(...notification);\n      return items;\n    }, []);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -291,7 +333,7 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 22
+                "line": 21
             },
             "accessors": {
                 "notifications": {
@@ -300,7 +342,7 @@
                         "name": "notifications",
                         "type": "",
                         "returnType": "",
-                        "line": 26
+                        "line": 25
                     }
                 }
             },
@@ -348,7 +390,7 @@
                 "args": [],
                 "line": 8
             },
-            "templateData": "<app-notification></app-notification>\n"
+            "templateData": "<iframe\n  class=\"w-full\"\n  src=\"http://localhost:6006/?path=/docs/ngm-components-notification--notification\"\n  style=\"height: calc(100vh - 150px)\"\n></iframe>\n"
         }
     ],
     "modules": [
@@ -664,6 +706,15 @@
                 "name": "notification",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/in-memory-data.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "InMemoryDataService",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {

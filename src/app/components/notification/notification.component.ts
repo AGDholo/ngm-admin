@@ -17,7 +17,6 @@ const notification = [
 export class NotificationComponent {
   @Input()
   flat: Boolean = false;
-
   @Input()
   bordered: Boolean = false;
 
